@@ -991,6 +991,8 @@ static NSMutableArray *recentNonces;
 	// Respond properly to HTTP 'GET' and 'HEAD' commands
 	httpResponse = [self httpResponseForMethod:method URI:uri];
 	
+    NSLog(@"%@", uri);
+    
 	if (httpResponse == nil)
 	{
 		[self handleResourceNotFound];
@@ -1675,6 +1677,7 @@ static NSMutableArray *recentNonces;
 	{
 		return [[HTTPFileResponse alloc] initWithFilePath:filePath forConnection:self];
 	
+        NSLog(@"%@", filePath);
 		// Use me instead for asynchronous file IO.
 		// Generally better for larger files.
 		
